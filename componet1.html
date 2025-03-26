@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div
+      class="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden max-w-4xl w-full"
+    >
+      <!-- Left Section -->
+      <div
+        class="w-full md:w-1/2 p-10 bg-gradient-to-b from-yellow-100 to-gray-100"
+      >
+        <h2 class="text-2xl font-semibold text-gray-800">Create an account</h2>
+        <p class="text-gray-600 text-sm mt-2">
+          Sign up and get 30-day free trial
+        </p>
+
+        <form id="signInForm" class="mt-6">
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm mb-2">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              placeholder="Amelie Laurent"
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm mb-2">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              placeholder="amelielaurent123@gmail.com"
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm mb-2">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              placeholder="********"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-yellow-400 text-white py-2 rounded-lg font-semibold hover:bg-yellow-500 transition"
+          >
+            Submit
+          </button>
+          <div class="flex justify-center mt-4 space-x-4">
+            <button
+              type="button"
+              class="px-4 py-2 border rounded-lg flex items-center space-x-2"
+            >
+              <img src="apple-logo.svg" alt="Apple" class="w-5" />
+              <span>Apple</span>
+            </button>
+            <button
+              type="button"
+              class="px-4 py-2 border rounded-lg flex items-center space-x-2"
+            >
+              <img src="google-logo.svg" alt="Google" class="w-5" />
+              <span>Google</span>
+            </button>
+          </div>
+        </form>
+        <p class="text-sm text-gray-500 mt-4">
+          Have an account?
+          <a href="#" id="signInLink" class="text-blue-500">Sign in</a>
+        </p>
+      </div>
+
+      <!-- Right Section -->
+      <div class="w-full md:w-1/2 relative hidden md:block">
+        <img
+          src="meeting.jpg"
+          alt="Meeting"
+          class="w-full h-full object-cover"
+        />
+        <div
+          class="absolute top-6 left-6 bg-yellow-400 text-gray-900 px-3 py-1 rounded-full shadow-md"
+        >
+          Team Review with Sean
+        </div>
+        <div class="absolute bottom-6 left-6 bg-white p-3 rounded-lg shadow-md">
+          <p class="text-gray-800 font-semibold">Daily Meeting</p>
+          <p class="text-gray-500 text-sm">Zoom</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("signInForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          let fullName = document.getElementById("fullName").value;
+          let email = document.getElementById("email").value;
+          let password = document.getElementById("password").value;
+
+          if (fullName && email && password) {
+            alert("Sign-up successful!");
+          } else {
+            alert("Please fill in all fields.");
+          }
+        });
+
+      document
+        .getElementById("signInLink")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          alert("Redirecting to Sign In page...");
+        });
+    </script>
+  </body>
+</html>
